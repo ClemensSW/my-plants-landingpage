@@ -12,17 +12,21 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <nav className="nav">
-          <div className="nav-brand">
-            <img src="/logo.svg" alt="My Plants" className="logo" />
+          <a href="#home" className="nav-brand">
+            <img 
+              src="../assets/images/logos/my-plants-logo.svg" 
+              alt="My Plants - Gartenbau Lern-App" 
+              className="logo" 
+            />
             <span className="brand-text">My Plants</span>
-          </div>
+          </a>
           
           <ul className={`nav-menu ${isMenuOpen ? 'nav-menu-active' : ''}`}>
             <li><a href="#features" className="nav-link">Features</a></li>
             <li><a href="#zielgruppen" className="nav-link">Zielgruppen</a></li>
             <li><a href="#preise" className="nav-link">Preise</a></li>
             <li><a href="#faq" className="nav-link">FAQ</a></li>
-            <li><a href="#contact" className="nav-link">Kontakt</a></li>
+            <li><a href="#kontakt" className="nav-link">Kontakt</a></li>
           </ul>
 
           <div className="nav-actions">
@@ -34,6 +38,7 @@ const Header = () => {
             className={`hamburger ${isMenuOpen ? 'hamburger-active' : ''}`}
             onClick={toggleMenu}
             aria-label="Menü öffnen"
+            aria-expanded={isMenuOpen}
           >
             <span></span>
             <span></span>

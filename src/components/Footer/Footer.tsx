@@ -7,25 +7,29 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-main">
             <div className="footer-brand">
-              <div className="brand-section">
-                <img src="/logo.svg" alt="My Plants" className="footer-logo" />
+              <a href="#home" className="brand-section">
+                <img 
+                  src="/images/logos/my-plants-logo-light.svg" 
+                  alt="My Plants Logo" 
+                  className="footer-logo" 
+                />
                 <span className="brand-text">My Plants</span>
-              </div>
+              </a>
               <p className="brand-description">
                 Die führende Lern-App für die Gartenbau-Ausbildung. 
                 KI-gestützte Pflanzenerkennung trifft auf adaptives Lernen.
               </p>
               <div className="social-links">
-                <a href="#linkedin" className="social-link" aria-label="LinkedIn">
+                <a href="https://linkedin.com/company/myplants" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">💼</span>
                 </a>
-                <a href="#twitter" className="social-link" aria-label="Twitter">
+                <a href="https://twitter.com/myplants" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">🐦</span>
                 </a>
-                <a href="#youtube" className="social-link" aria-label="YouTube">
+                <a href="https://youtube.com/@myplants" className="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">📺</span>
                 </a>
-                <a href="#instagram" className="social-link" aria-label="Instagram">
+                <a href="https://instagram.com/myplants" className="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                   <span className="social-icon">📷</span>
                 </a>
               </div>
@@ -134,7 +138,7 @@ const Footer = () => {
           <div className="footer-apps">
             <h4>My Plants herunterladen</h4>
             <div className="app-stores">
-              <a href="#app-store" className="store-link">
+              <a href="https://apps.apple.com/app/myplants" className="store-link" target="_blank" rel="noopener noreferrer">
                 <div className="store-icon">🍎</div>
                 <div className="store-info">
                   <span className="store-label">Download im</span>
@@ -142,7 +146,7 @@ const Footer = () => {
                 </div>
               </a>
               
-              <a href="#google-play" className="store-link">
+              <a href="https://play.google.com/store/apps/details?id=com.myplants" className="store-link" target="_blank" rel="noopener noreferrer">
                 <div className="store-icon">🤖</div>
                 <div className="store-info">
                   <span className="store-label">Jetzt bei</span>

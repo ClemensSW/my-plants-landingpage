@@ -42,18 +42,37 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.brand-section:hover {
+  transform: translateY(-2px);
 }
 
 .footer-logo {
-  width: 50px;
   height: 50px;
+  width: auto;
+  max-height: 60px;
+  object-fit: contain;
   filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.brand-section:hover .footer-logo {
+  transform: scale(1.05);
+  filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
 }
 
 .brand-text {
   font-size: 2rem;
   font-weight: 700;
   color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.brand-section:hover .brand-text {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .brand-description {
@@ -377,6 +396,14 @@
   .footer-copyright {
     text-align: center;
   }
+
+  .footer-logo {
+    height: 45px;
+  }
+
+  .brand-text {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -423,5 +450,34 @@
 
   .social-links {
     justify-content: center;
+  }
+
+  .footer-logo {
+    height: 40px;
+  }
+
+  .brand-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo {
+    height: 35px;
+  }
+
+  .brand-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* Logo-only Version für sehr kleine Screens */
+@media (max-width: 380px) {
+  .brand-text {
+    display: none;
+  }
+  
+  .footer-logo {
+    height: 40px;
   }
 }

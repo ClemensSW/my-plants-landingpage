@@ -20,17 +20,35 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-brand:hover {
+  transform: translateY(-1px);
 }
 
 .logo {
-  width: 40px;
   height: 40px;
+  width: auto;
+  max-height: 50px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.nav-brand:hover .logo {
+  transform: scale(1.05);
 }
 
 .brand-text {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-green);
+  transition: color 0.3s ease;
+}
+
+.nav-brand:hover .brand-text {
+  color: var(--secondary-green);
 }
 
 .nav-menu {
@@ -103,7 +121,7 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .nav-menu {
     position: fixed;
     top: 100%;
@@ -131,5 +149,55 @@
 
   .hamburger {
     display: flex;
+  }
+
+  .brand-text {
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    height: 35px;
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 12px 0;
+  }
+
+  .logo {
+    height: 32px;
+    max-height: 35px;
+  }
+
+  .brand-text {
+    font-size: 1.2rem;
+  }
+
+  .nav-brand {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 28px;
+    max-height: 32px;
+  }
+
+  .brand-text {
+    font-size: 1.1rem;
+  }
+}
+
+/* Logo-only Version für sehr kleine Screens */
+@media (max-width: 380px) {
+  .brand-text {
+    display: none;
+  }
+  
+  .logo {
+    height: 32px;
   }
 }
