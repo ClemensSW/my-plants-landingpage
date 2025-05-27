@@ -14,7 +14,7 @@ const Header = () => {
         <nav className="nav">
           <a href="#home" className="nav-brand">
             <img 
-              src="../assets/images/logos/my-plants-logo.svg" 
+              src="/images/logos/my-plants-logo.svg" 
               alt="My Plants - Gartenbau Lern-App" 
               className="logo" 
             />

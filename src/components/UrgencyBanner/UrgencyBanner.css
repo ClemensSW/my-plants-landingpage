@@ -1,0 +1,343 @@
+.urgency-banner {
+  background: linear-gradient(135deg, var(--accent-green), var(--secondary-green));
+  color: var(--white);
+  padding: 12px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1001;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animierter Hintergrund */
+.urgency-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+  z-index: -1;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.highlight {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-right: 4px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.banner-text strong {
+  color: var(--white);
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.banner-cta {
+  background-color: var(--white);
+  color: var(--primary-green);
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.banner-cta:hover::before {
+  left: 100%;
+}
+
+.banner-cta:hover {
+  background-color: var(--primary-green);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.banner-close {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.banner-close:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.banner-close:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .banner-content {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .banner-text {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+  
+  .banner-actions {
+    justify-content: center;
+  }
+  
+  .urgency-banner {
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner-text {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .banner-cta {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .banner-close {
+    font-size: 1.3rem;
+    padding: 2px 6px;
+  }
+  
+  .highlight {
+    padding: 1px 6px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .urgency-banner {
+    padding: 12px 0;
+  }
+  
+  .banner-content {
+    gap: 8px;
+  }
+  
+  .banner-text {
+    font-size: 0.8rem;
+  }
+  
+  .banner-text strong {
+    display: block;
+    margin-top: 2px;
+  }
+  
+  .banner-cta {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Verschiedene Urgency-Varianten */
+.urgency-banner.high-urgency {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  animation: pulse-urgency 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-urgency {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+.urgency-banner.limited-time {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.urgency-banner.new-feature {
+  background: linear-gradient(135deg, var(--accent-green), #4ecdc4);
+}
+
+/* Countdown Timer Styling (optional) */
+.countdown-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+.countdown-timer .time-unit {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1px 4px;
+  border-radius: 4px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Smooth Exit Animation */
+.urgency-banner.exiting {
+  animation: slideUp 0.3s ease-in forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+    max-height: 100px;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .urgency-banner,
+  .urgency-banner::before,
+  .highlight,
+  .banner-cta,
+  .banner-close {
+    animation: none;
+  }
+  
+  .urgency-banner.high-urgency {
+    animation: none;
+  }
+}
+
+/* Dark Mode Unterstützung */
+@media (prefers-color-scheme: dark) {
+  .banner-cta {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-green);
+  }
+  
+  .banner-cta:hover {
+    background-color: var(--white);
+    color: var(--primary-green);
+  }
+}
+
+/* Zusätzliche Banner-Varianten */
+.urgency-banner.subtle {
+  background: rgba(107, 168, 58, 0.1);
+  color: var(--primary-green);
+  border-bottom: 2px solid var(--accent-green);
+}
+
+.urgency-banner.subtle .banner-cta {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.urgency-banner.subtle .banner-cta:hover {
+  background-color: var(--secondary-green);
+}
+
+.urgency-banner.subtle .banner-close {
+  color: var(--primary-green);
+}

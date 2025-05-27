@@ -1,4 +1,6 @@
 import Header from './components/Header/Header'
+import UrgencyBanner from './components/UrgencyBanner/UrgencyBanner'
+import FloatingDownload from './components/FloatingDownload/FloatingDownload'
 import HeroSection from './components/HeroSection/HeroSection'
 import ProblemSolution from './components/ProblemSolution/ProblemSolution'
 import TargetGroups from './components/TargetGroups/TargetGroups'
@@ -12,6 +14,7 @@ import './styles/globals.css'
 function App() {
   return (
     <>
+      <UrgencyBanner />
       <Header />
       <main>
         <HeroSection />
@@ -23,6 +26,7 @@ function App() {
         <FAQ />
       </main>
       <Footer />
+      <FloatingDownload />
     </>
   )
 }

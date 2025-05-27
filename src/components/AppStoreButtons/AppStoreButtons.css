@@ -1,0 +1,100 @@
+.app-store-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  border: 2px solid transparent;
+}
+
+.store-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-green);
+}
+
+.apple-store {
+  background: linear-gradient(135deg, #000, #333);
+}
+
+.google-play {
+  background: linear-gradient(135deg, #01875f, #4285f4);
+}
+
+.store-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.store-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.store-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.store-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Varianten */
+.app-store-buttons.large .store-button {
+  padding: 16px 32px;
+  min-width: 180px;
+}
+
+.app-store-buttons.large .store-label {
+  font-size: 0.9rem;
+}
+
+.app-store-buttons.large .store-name {
+  font-size: 1.3rem;
+}
+
+.app-store-buttons.secondary .store-button {
+  background-color: var(--white);
+  color: var(--text-dark);
+  border: 2px solid var(--border-color);
+}
+
+.app-store-buttons.secondary .apple-store:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.app-store-buttons.secondary .google-play:hover {
+  background: linear-gradient(135deg, #01875f, #4285f4);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .app-store-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .store-button {
+    width: 100%;
+    justify-content: center;
+    min-width: auto;
+  }
+}

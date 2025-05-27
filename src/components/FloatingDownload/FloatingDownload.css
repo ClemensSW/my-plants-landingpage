@@ -1,0 +1,234 @@
+.floating-download {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.floating-content {
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  color: var(--white);
+  padding: 16px 24px;
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(45, 80, 22, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 280px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.floating-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(45, 80, 22, 0.5);
+}
+
+.floating-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.app-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.app-rating {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.floating-button {
+  background-color: var(--white);
+  color: var(--primary-green);
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.floating-button:hover {
+  background-color: var(--accent-green);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+/* Pulse Animation für Aufmerksamkeit */
+.floating-download::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+  border-radius: 55px;
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-download {
+    bottom: 80px; /* Platz für mobile Navigation */
+    left: 20px;
+    right: 20px;
+    transform: none;
+  }
+  
+  .floating-content {
+    min-width: auto;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .floating-button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-download {
+    bottom: 70px;
+    left: 16px;
+    right: 16px;
+  }
+  
+  .floating-content {
+    padding: 14px 20px;
+    gap: 12px;
+  }
+  
+  .app-name {
+    font-size: 1rem;
+  }
+  
+  .app-rating {
+    font-size: 0.8rem;
+  }
+  
+  .floating-button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Dark Mode Unterstützung */
+@media (prefers-color-scheme: dark) {
+  .floating-content {
+    background: linear-gradient(135deg, var(--secondary-green), var(--accent-green));
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .floating-button {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--primary-green);
+  }
+  
+  .floating-button:hover {
+    background-color: var(--white);
+    color: var(--secondary-green);
+  }
+}
+
+/* Verstecken bei sehr kleinen Screens */
+@media (max-width: 320px) {
+  .floating-download {
+    display: none;
+  }
+}
+
+/* Accessibility */
+.floating-button:focus {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+/* Smooth Entrance Animation */
+.floating-download.entering {
+  animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateX(-50%) translateY(100px) scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translateX(-50%) translateY(5px) scale(0.95);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover Effekt für das ganze Element */
+.floating-download:hover .floating-content {
+  background: linear-gradient(135deg, var(--secondary-green), var(--accent-green));
+}
+
+/* Zusätzliche Variante mit App Store Icons */
+.floating-download.with-stores .floating-content {
+  padding: 12px 20px;
+  gap: 12px;
+}
+
+.floating-download.with-stores .floating-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+}
+
+.floating-download.with-stores .store-icons {
+  display: flex;
+  gap: 4px;
+  font-size: 0.8rem;
+}

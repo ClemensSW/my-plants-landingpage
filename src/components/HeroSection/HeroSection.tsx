@@ -1,3 +1,4 @@
+import AppStoreButtons from '../AppStoreButtons/AppStoreButtons'
 import './HeroSection.css'
 
 const HeroSection = () => {
@@ -14,6 +15,7 @@ const HeroSection = () => {
               Über 100.000 Pflanzen aus der GBIF-Datenbank, Pl@ntNet-Integration und 
               personalisierte Lernpfade revolutionieren Ihre Ausbildung.
             </p>
+            
             <div className="hero-stats">
               <div className="stat">
                 <span className="stat-number">100.000+</span>
@@ -28,18 +30,50 @@ const HeroSection = () => {
                 <span className="stat-label">Betriebe</span>
               </div>
             </div>
+
             <div className="hero-actions">
-              <a href="#download" className="btn btn-primary btn-large">
-                Kostenlos testen
-              </a>
-              <a href="#demo" className="btn btn-secondary btn-large">
-                Demo buchen
-              </a>
+              <div className="primary-cta">
+                <AppStoreButtons variant="primary" size="large" />
+              </div>
+              
+              <div className="secondary-actions">
+                <a href="#demo" className="btn btn-secondary btn-large demo-btn">
+                  <span className="btn-icon">📺</span>
+                  Live Demo ansehen
+                </a>
+                <a href="#preise" className="btn btn-outline btn-large">
+                  <span className="btn-icon">💰</span>
+                  Preise & Pakete
+                </a>
+              </div>
             </div>
-            <p className="hero-note">
-              ✓ 30 Tage kostenlos testen • ✓ Keine Kreditkarte erforderlich • ✓ Sofortige Einrichtung
-            </p>
+
+            <div className="hero-note">
+              <div className="trust-indicators">
+                <span className="trust-item">
+                  <span className="trust-icon">✅</span>
+                  30 Tage kostenlos testen
+                </span>
+                <span className="trust-item">
+                  <span className="trust-icon">🚀</span>
+                  Sofortige Einrichtung
+                </span>
+                <span className="trust-item">
+                  <span className="trust-icon">🔒</span>
+                  DSGVO-konform
+                </span>
+              </div>
+              
+              <div className="social-proof-mini">
+                <div className="rating-stars">
+                  <span>⭐⭐⭐⭐⭐</span>
+                  <span className="rating-text">4.9/5 (2.500+ Bewertungen)</span>
+                </div>
+                <p className="download-count">Bereits über 10.000 Downloads!</p>
+              </div>
+            </div>
           </div>
+
           <div className="hero-visual">
             <div className="phone-mockup">
               <div className="phone-screen">
@@ -50,39 +84,93 @@ const HeroSection = () => {
                       <div className="nav-dot"></div>
                       <div className="nav-dot"></div>
                     </div>
+                    <div className="app-title">My Plants</div>
                   </div>
                   <div className="app-content">
-                    <div className="plant-card">
-                      <div className="plant-image"></div>
-                      <div className="plant-info">
-                        <h3>Quercus robur</h3>
-                        <p>Stieleiche</p>
+                    <div className="scan-interface">
+                      <div className="scan-viewfinder">
+                        <div className="scan-corners">
+                          <div className="corner top-left"></div>
+                          <div className="corner top-right"></div>
+                          <div className="corner bottom-left"></div>
+                          <div className="corner bottom-right"></div>
+                        </div>
+                        <div className="plant-preview"></div>
+                        <div className="scan-line"></div>
+                      </div>
+                      <div className="scan-button">
+                        <span className="camera-icon">📷</span>
                       </div>
                     </div>
-                    <div className="feature-icons">
-                      <div className="feature-icon">🔍</div>
-                      <div className="feature-icon">📷</div>
-                      <div className="feature-icon">🤖</div>
-                      <div className="feature-icon">📚</div>
+                    
+                    <div className="plant-result">
+                      <div className="result-card">
+                        <div className="plant-image"></div>
+                        <div className="plant-info">
+                          <h3>Quercus robur</h3>
+                          <p>Stieleiche</p>
+                          <div className="confidence">95% Sicherheit</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="feature-pills">
+                      <div className="pill">🤖 KI-Erkennung</div>
+                      <div className="pill">📚 Lernmodus</div>
+                      <div className="pill">📊 Fortschritt</div>
                     </div>
                   </div>
                 </div>
               </div>
+              
+              {/* Download-Pulse Animation */}
+              <div className="download-pulse">
+                <div className="pulse-ring"></div>
+                <div className="pulse-ring delay-1"></div>
+                <div className="pulse-ring delay-2"></div>
+                <span className="pulse-text">Jetzt downloaden!</span>
+              </div>
             </div>
+
             <div className="floating-elements">
               <div className="floating-card floating-1">
                 <span className="emoji">🌱</span>
-                <span>KI-Erkennung</span>
+                <div className="card-text">
+                  <strong>Sofortiger Scan</strong>
+                  <span>95% Genauigkeit</span>
+                </div>
               </div>
               <div className="floating-card floating-2">
                 <span className="emoji">📊</span>
-                <span>Lernfortschritt</span>
+                <div className="card-text">
+                  <strong>Lernfortschritt</strong>
+                  <span>Personalisiert</span>
+                </div>
               </div>
               <div className="floating-card floating-3">
                 <span className="emoji">🎯</span>
-                <span>Adaptives Lernen</span>
+                <div className="card-text">
+                  <strong>Adaptives Lernen</strong>
+                  <span>Spaced Repetition</span>
+                </div>
+              </div>
+              <div className="floating-card floating-4">
+                <span className="emoji">💬</span>
+                <div className="card-text">
+                  <strong>KI-Botaniker</strong>
+                  <span>24/7 Hilfe</span>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Zusätzlicher Download-CTA Bereich */}
+        <div className="hero-bottom-cta">
+          <div className="bottom-cta-content">
+            <h3>Starten Sie noch heute Ihre digitale Gartenbau-Ausbildung</h3>
+            <p>Über 500 Betriebe vertrauen bereits auf My Plants</p>
+            <AppStoreButtons variant="secondary" size="normal" />
           </div>
         </div>
       </div>
