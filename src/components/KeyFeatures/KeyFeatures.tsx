@@ -30,7 +30,7 @@ const KeyFeatures = () => {
                   <span className="stat-label">Erkennungsgenauigkeit</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-value">< 3s</span>
+                  <span className="stat-value">&lt; 3s</span>
                   <span className="stat-label">Antwortzeit</span>
                 </div>
                 <div className="stat">
